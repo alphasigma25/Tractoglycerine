@@ -5,10 +5,9 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private GameObject m_Enemy;
-    public int maxEnemy;
-    public float spawnFreq;
-    private float timer;
 
+    private float timer;
+    public LvlData data;
     List<GameObject> enemies;
 
     // Start is called before the first frame update
@@ -22,9 +21,11 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > spawnFreq && enemies.Count < maxEnemy)
+        if (timer > data.spawnFreq && enemies.Count < data.maxEnemies)
         {
-            enemies.Add(Instantiate(m_Enemy, transform.position + Random.onUnitSphere, Quaternion.identity));
+            GameObject newEnemy = Instantiate(m_Enemy, transform.position + Random.onUnitSphere, Quaternion.identity);
+            newEnemy.GetComponent<Enemy>().data = data.monsters[Random.Range(0, data.monsters.Count)];
+            enemies.Add(newEnemy);
             timer = 0;
         }
     }
