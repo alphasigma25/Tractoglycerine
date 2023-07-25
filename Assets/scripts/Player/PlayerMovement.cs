@@ -8,8 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerController _playerController;
 
     [SerializeField] private float _speed = 4.0f;
-
-
+    public Vector3 Direction { get; set; }
     void Awake()
     {
         _playerController = GetComponent<PlayerController>();
@@ -22,12 +21,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //transform.position += new Vector3(_playerController.Movement.x * Time.deltaTime, _playerController.Movement.y * Time.deltaTime, 0.0f) * _speed;
-        Debug.Log(Time.deltaTime*_speed);
-        Vector3 position = Vector3.zero;
-        position.x = _playerController.Movement.x;
-        position.y = _playerController.Movement.y;
-        transform.position += Vector3.Normalize(position) * Time.deltaTime * _speed;
+        Vector3 direction = Vector3.zero;
+        direction.x = _playerController.Movement.x;
+        direction.y = _playerController.Movement.y;
+        Direction = Vector3.Normalize(direction);
+        transform.position += Direction * Time.deltaTime * _speed;
 
     }
 }
