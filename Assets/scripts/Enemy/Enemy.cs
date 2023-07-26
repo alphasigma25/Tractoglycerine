@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [Header("Properties")]
     [SerializeField] private float speed;
     public int health = 100;
+    public int damage = 50;
 
     [Header("Resistance")]
     [SerializeField] private int res1;
@@ -32,13 +33,14 @@ public class Enemy : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collided = collision.gameObject;
-        if (collided.tag == "Killer")
+        if (collided.tag == "Projectile")
         {
             Debug.Log($"collided {collided}");
             health = 0;
+            Destroy(collided);
         }
     }
 }

@@ -25,11 +25,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 direction = Vector3.zero;
         direction.x = _playerController.Movement.x;
         direction.y = _playerController.Movement.y;
-        if (Mathf.Abs(direction.x) > value && Mathf.Abs (direction.y) > value)
+        if (direction.magnitude > 0.01f)
         {
             Direction = Vector3.Normalize(direction);
         }
-        transform.position += Vector3.Normalize (direction) * Time.deltaTime * _speed;
-
+        transform.position += Vector3.Normalize(direction) * Time.deltaTime * _speed;
     }
 }
