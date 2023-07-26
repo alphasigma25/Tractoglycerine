@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "LvlData", order = 1)]
 public class LvlData : ScriptableObject
 {
-    public List<MonsterData> monsters;
+    public List<GameObject> monsters;
 
     [Header("Spawn Params")]
     public float spawnFreq;

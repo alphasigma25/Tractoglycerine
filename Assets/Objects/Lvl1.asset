@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Lvl1
   m_EditorClassIdentifier: 
   monsters:
-  - {fileID: 11400000, guid: 40f0f4fdd1a48e0478d38c54345fc347, type: 2}
-  - {fileID: 11400000, guid: 3872c737f8fe91d4199d0f3f75d00209, type: 2}
-  spawnFreq: 0.1
-  maxEnemies: 10
+  - {fileID: 6719033773205701123, guid: f8dc6b1e872c66642a7ab749f939ddc3, type: 3}
+  - {fileID: 6719033773205701123, guid: 852a6045cf3ab814fb7fc87aabc3dd5a, type: 3}
+  - {fileID: 6719033773205701123, guid: cf7f7d4c8fdf2504b9721ff4d2375284, type: 3}
+  - {fileID: 6719033773205701123, guid: 8edfec91c4ba07540b9cf07591534b3e, type: 3}
+  spawnFreq: 0.2
+  maxEnemies: 1
