@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     //Action bools
     private bool _action1;
-
+    private bool _action2;
     //Game State bools
     public bool play = true;
     public delegate void Pause(bool isActive);
@@ -27,13 +27,15 @@ public class PlayerController : MonoBehaviour
     private bool _repeatingAction1 = false;
     private float _repeatingTimer = 0.1f;
     private float _repeatTimerAction1;
-
+    private bool _repeatingAction2 = false;
+    private float _repeatTimerAction2;
 
     //Properties
     public string ControlScheme { get => _controlScheme; set => _controlScheme = value; }
     public Vector2 Movement { get => _movement; set => _movement = value; }
     public Vector2 Aim { get => _aim; set => _aim = value; }
     public bool Action1 { get => _action1; set => _action1 = value; }
+    public bool Action2 { get => _action2; set => _action2 = value; }
     public bool CanRepeateActions { get => _canRepeateActions; set => _canRepeateActions = value; }
 
     private void Awake()
@@ -60,6 +62,20 @@ public class PlayerController : MonoBehaviour
             else
             {
                 _action1 = false;
+            }
+            if (_repeatingAction2)
+            {
+                _repeatTimerAction2 += Time.deltaTime;
+            }
+            if (_repeatTimerAction2 >= _repeatingTimer)
+            {
+                _action2 = true;
+                _repeatingAction1 = false;
+                _repeatTimerAction1 = 0.0f;
+            }
+            else
+            {
+                _action2 = false;
             }
         }
     }
@@ -93,6 +109,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             _action1 = value.isPressed;
+            _action2= value.isPressed;
         }
     }
 
