@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public enum MonsterTypes
+public enum ProjectileType
 {
     T1, T2, T3, T4
 }

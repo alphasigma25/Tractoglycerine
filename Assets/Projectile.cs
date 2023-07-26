@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public MonsterTypes projectileType;
+    public ProjectileType projectileType;
     public float speed = 4;
     public float lifeTime = 5;
     public Vector3 direction { get; set; }
