@@ -58,8 +58,7 @@ public class PlayerController : MonoBehaviour
                 _action1 = true;
                 _repeatingAction1 = false;
                 _repeatTimerAction1 = 0.0f;
-            }
-            else
+            } else
             {
                 _action1 = false;
             }
@@ -70,10 +69,9 @@ public class PlayerController : MonoBehaviour
             if (_repeatTimerAction2 >= _repeatingTimer)
             {
                 _action2 = true;
-                _repeatingAction1 = false;
-                _repeatTimerAction1 = 0.0f;
-            }
-            else
+                _repeatingAction2 = false;
+                _repeatTimerAction2 = 0.0f;
+            } else
             {
                 _action2 = false;
             }
@@ -105,11 +103,21 @@ public class PlayerController : MonoBehaviour
             if (value.isPressed)
                 _repeatingAction1 = true;
 
-        }
-        else
+        } else
         {
             _action1 = value.isPressed;
-            _action2= value.isPressed;
+        }
+    }
+    public void OnAction2(InputValue value)
+    {
+        if (!_canRepeateActions)
+        {
+            if (value.isPressed)
+                _repeatingAction2 = true;
+
+        } else
+        {
+            _action2 = value.isPressed;
         }
     }
 

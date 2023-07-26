@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.64903307, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,13 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f267791281e50ad40a0e47dcaa53aa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  health: 100
-  damage: 50
-  weak1: 10
-  weak2: 50
-  weak3: 0
-  weak4: 0
 --- !u!58 &-9165500817122291937
 CircleCollider2D:
   m_ObjectHideFlags: 0

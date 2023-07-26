@@ -18,12 +18,12 @@ public class Player : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            
+
             Debug.Log("Le joueur est mort");
             SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
             Destroy(GetComponent<PlayerMovement>());
             Destroy(GetComponent<PlayerController>());
-          
+
         }
     }
 
@@ -31,10 +31,10 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            MakeDamage(collision.gameObject.GetComponent<Enemy>().damage);
+            MakeDamage(collision.gameObject.GetComponent<Enemy>().data.damage);
         }
     }
-   
+
     // Update is called once per frame
     void Update()
     {

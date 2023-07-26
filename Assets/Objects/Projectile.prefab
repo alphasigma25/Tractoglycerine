@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: 0
   speed: 20
-  lifeTime: 5
+  lifeTime: 1
 --- !u!60 &-4554261908161255662
 PolygonCollider2D:
   m_ObjectHideFlags: 0

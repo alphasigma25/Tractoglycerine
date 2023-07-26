@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
 {
     private float timer;
     private int nb_created;
-    public LvlData data;
+    public SpawnerData data;
     List<GameObject> enemies;
 
     // Start is called before the first frame update
@@ -17,16 +20,27 @@ public class EnemyManager : MonoBehaviour
         enemies = new List<GameObject>();
     }
 
+    private void CreateEnemy()
+    {
+        GameObject newEnemy = Instantiate(data.EnemyObject, transform.position + Random.onUnitSphere, Quaternion.identity);
+        newEnemy.GetComponent<Enemy>().data = data.enemies[Random.Range(0, data.enemies.Count)];
+        enemies.Add(newEnemy);
+    }
+
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
         if (timer > data.spawnFreq && nb_created < data.maxEnemies)
         {
-            GameObject newEnemy = Instantiate(data.monsters[Random.Range(0, data.monsters.Count)], transform.position + Random.onUnitSphere, Quaternion.identity);
-            enemies.Add(newEnemy);
-            timer = 0;
+            CreateEnemy();
             nb_created++;
+            timer = 0;
+        }
+
+        if (nb_created < data.maxEnemies && enemies.Count == 0)
+        {
+            Debug.Log("lvl finished");
         }
 
         for (int i = 0; i < enemies.Count; i++)
@@ -34,7 +48,6 @@ public class EnemyManager : MonoBehaviour
             var enemy = enemies[i];
             if (enemy.GetComponent<Enemy>().health == 0)
             {
-                Debug.Log($"destroy {enemy}");
                 enemies.RemoveAt(i);
                 i--;
                 Destroy(enemy);

@@ -6,9 +6,6 @@ public class PlayerAction : MonoBehaviour
 {
     //Reference Scripts
     private PlayerController _playerController;
-
-    private float _distance = 0.0f;
-
     public GameObject Projectile;
 
 

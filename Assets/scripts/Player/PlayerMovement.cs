@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private PlayerController _playerController;
 
     [SerializeField] private float _speed = 4.0f;
-    private float value = 0.001f;
     public Vector3 Direction { get; set; }
     void Awake()
     {

@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "LvlData", order = 1)]
-public class LvlData : ScriptableObject
+public class SpawnerData : ScriptableObject
 {
-    public List<GameObject> monsters;
+    public GameObject EnemyObject;
+
+    public List<EnemyData> enemies;
 
     [Header("Spawn Params")]
     public float spawnFreq;
