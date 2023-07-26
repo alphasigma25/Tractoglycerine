@@ -14,11 +14,11 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public int damage = 50;
 
-    [Header("Resistance")]
-    [SerializeField] private int res1;
-    [SerializeField] private int res2;
-    [SerializeField] private int res3;
-    [SerializeField] private int res4;
+    [Header("Weakness")]
+    [SerializeField] private int weak1;
+    [SerializeField] private int weak2;
+    [SerializeField] private int weak3;
+    [SerializeField] private int weak4;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,15 @@ public class Enemy : MonoBehaviour
         if (collided.tag == "Projectile")
         {
             Debug.Log($"collided {collided}");
-            health = 0;
+            var proj = collided.GetComponent<Projectile>();
+            switch (proj.projectileType)
+            {
+                case ProjectileType.T1: health -= weak1; break;
+                case ProjectileType.T2: health -= weak2; break;
+                case ProjectileType.T3: health -= weak3; break;
+                case ProjectileType.T4: health -= weak4; break;
+                default: break;
+            }
             Destroy(collided);
         }
     }

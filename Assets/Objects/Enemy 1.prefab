@@ -102,10 +102,10 @@ MonoBehaviour:
   speed: 0.5
   health: 100
   damage: 50
-  res1: 0
-  res2: 0
-  res3: 0
-  res4: 0
+  weak1: 20
+  weak2: 100
+  weak3: 0
+  weak4: 0
 --- !u!58 &-9165500817122291937
 CircleCollider2D:
   m_ObjectHideFlags: 0
