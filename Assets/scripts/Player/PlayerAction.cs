@@ -7,7 +7,9 @@ public class PlayerAction : MonoBehaviour
     //Reference Scripts
     private PlayerController _playerController;
 
-    
+    private float _distance = 0.0f;
+
+    public GameObject Projectile;
 
 
     void Awake()
@@ -22,7 +24,10 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        
-       
+        if (_playerController.Action1)
+        {
+            GameObject newProjectile = Instantiate(Projectile, transform.position, Quaternion.identity);
+            newProjectile.GetComponent<Projectile>().direction = GetComponent <PlayerMovement> ().Direction;
+        }
     }
 }
