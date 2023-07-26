@@ -26,7 +26,7 @@ public class PlayerAction : MonoBehaviour
     {
         if (_playerController.Action1)
         {
-           GameObject newProjectile = Instantiate(Projectile, transform.position, Quaternion.identity);
+            GameObject newProjectile = Instantiate(Projectile, transform.position, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = GetComponent <PlayerMovement> ().Direction;
         }
     }
