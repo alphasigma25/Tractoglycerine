@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float Speed = 4.0f;
     [SerializeField] private float RotationSpeed = 720f;
-    public Vector3 Direction { get; set; }
+    public Vector3 Direction { get; set; } = Vector3.right;
     void Awake()
     {
         _playerController = GetComponent<PlayerController>();
