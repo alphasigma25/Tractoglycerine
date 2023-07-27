@@ -253,7 +253,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1755239189}
   m_Father: {fileID: 112874118}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -376,14 +377,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: -10.44, z: -10}
+  m_LocalRotation: {x: -0.3652346, y: 0.003999582, z: -0.00087775826, w: 0.93090653}
+  m_LocalPosition: {x: -0.26, y: -7.43, z: -10.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -42.843, y: 0.632, z: -0.356}
 --- !u!1 &523071502
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 855497817618049204, guid: bfaecfd8625d51a48a12928591997d16, type: 3}
       propertyPath: m_Name
-      value: Spawner (1)
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfaecfd8625d51a48a12928591997d16, type: 3}
@@ -661,13 +662,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755239186}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -441, y: -248, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 130088585}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &699542856257441126
 PrefabInstance:
@@ -806,6 +807,10 @@ PrefabInstance:
       propertyPath: Projectiles.Array.data[1]
       value: 
       objectReference: {fileID: 1013622074536377930, guid: 5e176552dbaf35c40b0ba69e5c77816a, type: 3}
+    - target: {fileID: 5572725269922040866, guid: 82cfebbd992836d48882332276224aea, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 523071503}
     - target: {fileID: 7317703380375109296, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: m_Name
       value: Player
