@@ -46,7 +46,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemies.Count; i++)
         {
             var enemy = enemies[i];
-            if (enemy.GetComponent<Enemy>().health == 0)
+            if (enemy.GetComponent<Enemy>().health <= 0)
             {
                 enemies.RemoveAt(i);
                 i--;

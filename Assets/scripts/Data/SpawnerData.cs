@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "LvlData", order = 1)]
+[CreateAssetMenu(fileName = "Data", menuName = "SpawnerData", order = 1)]
 public class SpawnerData : ScriptableObject
 {
     public GameObject EnemyObject;

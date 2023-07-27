@@ -134,9 +134,21 @@ PrefabInstance:
       propertyPath: Projectile
       value: 
       objectReference: {fileID: 1013622074536377930, guid: a90711c025e5ec14fbc88c97534d2949, type: 3}
+    - target: {fileID: -6351674835943593078, guid: 82cfebbd992836d48882332276224aea, type: 3}
+      propertyPath: Projectiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6351674835943593078, guid: 82cfebbd992836d48882332276224aea, type: 3}
+      propertyPath: Projectiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1013622074536377930, guid: a90711c025e5ec14fbc88c97534d2949, type: 3}
+    - target: {fileID: -6351674835943593078, guid: 82cfebbd992836d48882332276224aea, type: 3}
+      propertyPath: Projectiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1013622074536377930, guid: 5e176552dbaf35c40b0ba69e5c77816a, type: 3}
     - target: {fileID: -4926550735402883414, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -3855115911577061170, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: m_IsTrigger
@@ -145,6 +157,10 @@ PrefabInstance:
     - target: {fileID: 7317703380375109296, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317703380375109297, guid: 82cfebbd992836d48882332276224aea, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7317703380375109302, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: m_RootOrder

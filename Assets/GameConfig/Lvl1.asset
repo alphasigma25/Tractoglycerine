@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbbbf3cc2f715fa479be3197a00088a0, type: 3}
-  m_Name: Enemy2
+  m_Script: {fileID: 11500000, guid: f8641bc81af4af941b0529a0041aee67, type: 3}
+  m_Name: Lvl1
   m_EditorClassIdentifier: 
-  sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  color: {r: 1, g: 0, b: 0, a: 1}
-  mass: 0.1
-  speed: 0.75
-  initHealth: 20
-  damage: 1
-  w1: 2
-  w2: 10
+  Projectiles:
+  - {fileID: 1013622074536377930, guid: a90711c025e5ec14fbc88c97534d2949, type: 3}
+  - {fileID: 1013622074536377930, guid: 5e176552dbaf35c40b0ba69e5c77816a, type: 3}

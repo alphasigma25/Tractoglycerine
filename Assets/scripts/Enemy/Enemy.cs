@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     private Transform playerTransfo;
     private Vector3 direction;
-    public int health { get; private set; } = 1; //un hack car quand objet créé, health a pas encore été init (donc =0) et on va le supprimer directement dans le manager
+    public int health /*{ get;  private set; }*/ = 1; //un hack car quand objet créé, health a pas encore été init (donc =0) et on va le supprimer directement dans le manager
     public EnemyData data { get; set; }
 
     // Start is called before the first frame update
