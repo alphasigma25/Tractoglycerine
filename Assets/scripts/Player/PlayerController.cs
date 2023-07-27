@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
     //Reference Scripts
     private PlayerInput _playerInput;
 
@@ -58,7 +60,8 @@ public class PlayerController : MonoBehaviour
                 _action1 = true;
                 _repeatingAction1 = false;
                 _repeatTimerAction1 = 0.0f;
-            } else
+            }
+            else
             {
                 _action1 = false;
             }
@@ -71,10 +74,17 @@ public class PlayerController : MonoBehaviour
                 _action2 = true;
                 _repeatingAction2 = false;
                 _repeatTimerAction2 = 0.0f;
-            } else
+            }
+            else
             {
                 _action2 = false;
             }
+        }
+
+
+        if (gameManager.hasWon && _action2)
+        {
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -103,7 +113,8 @@ public class PlayerController : MonoBehaviour
             if (value.isPressed)
                 _repeatingAction1 = true;
 
-        } else
+        }
+        else
         {
             _action1 = value.isPressed;
         }
@@ -115,7 +126,8 @@ public class PlayerController : MonoBehaviour
             if (value.isPressed)
                 _repeatingAction2 = true;
 
-        } else
+        }
+        else
         {
             _action2 = value.isPressed;
         }
