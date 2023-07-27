@@ -9,6 +9,7 @@ public class SpawnerData : ScriptableObject
     public List<EnemyData> enemies;
 
     [Header("Spawn Params")]
+    public float startSpwaning = 0;
     public float spawnFreq;
     public int maxEnemies;
 }

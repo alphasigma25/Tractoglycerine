@@ -5,12 +5,14 @@ using UnityEngine;
 
 using Random = UnityEngine.Random;
 
-public class EnemyManager : MonoBehaviour
+public class SpawnerManager : MonoBehaviour
 {
     private float timer;
     private int nb_created;
     public SpawnerData data;
     List<GameObject> enemies;
+
+    private bool startSpawning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,11 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > data.spawnFreq && nb_created < data.maxEnemies)
+        if (timer > data.startSpwaning)
+        {
+            startSpawning = true;
+        }
+        if (startSpawning && timer > data.spawnFreq && nb_created < data.maxEnemies)
         {
             CreateEnemy();
             nb_created++;
