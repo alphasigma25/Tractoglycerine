@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
     //Reference Scripts
     private PlayerController _playerController;
 
-    [SerializeField] private float _speed = 4.0f;
+    [SerializeField] private float Speed = 4.0f;
+    [SerializeField] private float RotationSpeed = 720f;
     public Vector3 Direction { get; set; }
     void Awake()
     {
@@ -28,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Direction = Vector3.Normalize(direction);
         }
-        transform.position += Vector3.Normalize(direction) * Time.deltaTime * _speed;
+        transform.Translate(Vector3.Normalize(direction) * Time.deltaTime * Speed, Space.World);
+        if (direction != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, RotationSpeed * Time.deltaTime);
+        }
     }
 }

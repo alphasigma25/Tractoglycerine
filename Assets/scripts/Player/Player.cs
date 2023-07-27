@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public float maxHealth = 100;
+    public float maxHealth = 5;
     private float health;
 
     // Start is called before the first frame update
