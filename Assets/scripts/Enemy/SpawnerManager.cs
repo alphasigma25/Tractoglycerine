@@ -8,9 +8,9 @@ using Random = UnityEngine.Random;
 public class SpawnerManager : MonoBehaviour
 {
     private float timer;
-    private int nb_created;
+    public int nb_created;
     public SpawnerData data;
-    List<GameObject> enemies;
+    public List<GameObject> enemies;
 
     private bool startSpawning = false;
 
@@ -42,11 +42,6 @@ public class SpawnerManager : MonoBehaviour
             CreateEnemy();
             nb_created++;
             timer = 0;
-        }
-
-        if (nb_created < data.maxEnemies && enemies.Count == 0)
-        {
-            Debug.Log("lvl finished");
         }
 
         for (int i = 0; i < enemies.Count; i++)
