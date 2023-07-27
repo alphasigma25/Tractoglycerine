@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public float maxHealth = 5;
     private float health;
-
+    private bool load = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +16,6 @@ public class Player : MonoBehaviour
     void MakeDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
-        {
-
-            Debug.Log("Le joueur est mort");
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-            Destroy(GetComponent<PlayerMovement>());
-            Destroy(GetComponent<PlayerController>());
-
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,6 +29,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            if (!load)
+            {
 
+                load = true;
+
+                Debug.Log("Le joueur est mort");
+
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+                Destroy(GetComponent<PlayerMovement>());
+                Destroy(GetComponent<PlayerController>());
+
+            }
+        }
     }
 }

@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class test : MonoBehaviour
+public class MenuGO : MonoBehaviour
 {
     int option = 0;
     public void Quit()
@@ -14,7 +13,7 @@ public class test : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Lvl2");
+        SceneManager.LoadScene("Lvl1");
     }
     // Start is called before the first frame update
     void Start()
