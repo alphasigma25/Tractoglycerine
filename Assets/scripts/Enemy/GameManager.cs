@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public List<SpawnerManager> Spawners;
     [SerializeField] GameObject WinPanel;
-
     public bool hasWon { get; set; } = false;
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
             hasWon &= (spawner.enemies.Count == 0 && spawner.nb_created == spawner.data.maxEnemies);
         }
         WinPanel.SetActive(hasWon);
+
 
     }
 }
