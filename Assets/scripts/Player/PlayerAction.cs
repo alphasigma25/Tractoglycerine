@@ -38,6 +38,7 @@ public class PlayerAction : MonoBehaviour
             GameObject newProjectile = Instantiate(Projectiles[0], transform.position + dir, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = dir;
             PlayShootAnimation();
+            ProjectilShootAnimation();
         }
 
         if (_playerController.Action2 && Projectiles.Count > 1)
@@ -46,6 +47,7 @@ public class PlayerAction : MonoBehaviour
             GameObject newProjectile = Instantiate(Projectiles[1], transform.position + dir, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = dir;
             PlayShootAnimation();
+            ProjectilShootAnimation();
         }
 
         if (_playerController.Action3 && true)
@@ -57,5 +59,10 @@ public class PlayerAction : MonoBehaviour
     void PlayShootAnimation()
     {
         animator.SetTrigger("Shoot");
+    }
+
+    void ProjectilShootAnimation()
+    {
+        animator.SetTrigger("ProjectilShoot");
     }
 }
