@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757b06662e4ae3d42b198b684e72e7dd, type: 3}
   m_Name: Spawner rouge 2
   m_EditorClassIdentifier: 
-  EnemyObject: {fileID: 6719033773205701123, guid: 8edfec91c4ba07540b9cf07591534b3e, type: 3}
+  EnemyObject: {fileID: 6719033773205701123, guid: 0bee616de0a4c334a89484d68403724d, type: 3}
   enemies:
   - {fileID: 11400000, guid: 47cb65751f6ee7043a73370d0a1544e2, type: 2}
   startSpwaning: 26
