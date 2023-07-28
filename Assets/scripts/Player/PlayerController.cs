@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     //Action bools
     private bool _action1;
     private bool _action2;
-    private bool _action3;
     //Game State bools
     public bool play = true;
     public delegate void Pause(bool isActive);
@@ -32,15 +31,13 @@ public class PlayerController : MonoBehaviour
     private float _repeatTimerAction1;
     private bool _repeatingAction2 = false;
     private float _repeatTimerAction2;
-    private bool _repeatingAction3 = false;
-    private float _repeatTimerAction3;
+
     //Properties
     public string ControlScheme { get => _controlScheme; set => _controlScheme = value; }
     public Vector2 Movement { get => _movement; set => _movement = value; }
     public Vector2 Aim { get => _aim; set => _aim = value; }
     public bool Action1 { get => _action1; set => _action1 = value; }
     public bool Action2 { get => _action2; set => _action2 = value; }
-    public bool Action3 { get => _action3; set => _action3 = value; }
     public bool CanRepeateActions { get => _canRepeateActions; set => _canRepeateActions = value; }
 
     private void Awake()
@@ -68,7 +65,6 @@ public class PlayerController : MonoBehaviour
             {
                 _action1 = false;
             }
-
             if (_repeatingAction2)
             {
                 _repeatTimerAction2 += Time.deltaTime;
@@ -83,25 +79,14 @@ public class PlayerController : MonoBehaviour
             {
                 _action2 = false;
             }
-
-            if (_repeatingAction3)
-            {
-                _repeatTimerAction3 += Time.deltaTime;
-            }
-            if (_repeatTimerAction3 >= _repeatingTimer)
-            {
-                _action3 = true;
-                _repeatingAction3 = false;
-                _repeatTimerAction3 = 0.0f;
-            }
-            else
-            {
-                _action3 = false;
-            }
         }
 
+        // Désactivé pour controler autrement
 
-      
+        //if (gameManager.hasWon && _action2)
+        //{
+          //  SceneManager.LoadScene(1);
+        //}
     }
 
     public void OnMove(InputValue value)
@@ -149,19 +134,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnAction3(InputValue value)
-    {
-        if (!_canRepeateActions)
-        {
-            if (value.isPressed)
-                _repeatingAction3 = true;
-
-        }
-        else
-        {
-            _action3 = value.isPressed;
-        }
-    }
     public void OnPause(InputValue value)
     {
         play = !play;
