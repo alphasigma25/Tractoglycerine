@@ -3,29 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Random = UnityEngine.Random;
+
+
 public class PlayerAction : MonoBehaviour
 {
     //Reference Scripts
     private PlayerController _playerController;
     public List<GameObject> Projectiles;
 
-    private AudioSource _audioSource;
-
     public GameObject foot;
 
     private Animator animator;
-
 
     private bool invocation_available = true;
 
     void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+        animator = GetComponent<Animator>();
+
     }
 
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+
     }
 
     void Update()
@@ -36,7 +38,8 @@ public class PlayerAction : MonoBehaviour
             var dir = GetComponent<PlayerMovement>().Direction;
             GameObject newProjectile = Instantiate(Projectiles[0], transform.position + dir, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = dir;
-            _audioSource.Play();
+            PlayShootAnimation();
+            ProjectilShootAnimation();
         }
 
         if (_playerController.Action2 && Projectiles.Count > 1)
@@ -44,9 +47,9 @@ public class PlayerAction : MonoBehaviour
             var dir = GetComponent<PlayerMovement>().Direction;
             GameObject newProjectile = Instantiate(Projectiles[1], transform.position + dir, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = dir;
-            _audioSource.Play();
+            PlayShootAnimation();
+            ProjectilShootAnimation();
         }
-
 
         if (_playerController.Action3 && invocation_available)
         {
