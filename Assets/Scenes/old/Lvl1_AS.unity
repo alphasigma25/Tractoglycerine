@@ -481,11 +481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144dedee9475a4f4d9b7e34a2079d9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1031735971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5207596069980133851, guid: 6accc6241c5ea0648951dc1d5009f8a4, type: 3}
-  m_PrefabInstance: {fileID: 5207596070059496312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &699542856257441126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -605,6 +600,10 @@ PrefabInstance:
     - target: {fileID: 855497817618049099, guid: bfaecfd8625d51a48a12928591997d16, type: 3}
       propertyPath: Datas.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 855497817618049099, guid: bfaecfd8625d51a48a12928591997d16, type: 3}
+      propertyPath: enemies.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 855497817618049099, guid: bfaecfd8625d51a48a12928591997d16, type: 3}
       propertyPath: Datas.Array.data[0]
@@ -792,7 +791,7 @@ PrefabInstance:
     - target: {fileID: 6129084511623285804, guid: c58610019ac108e479e1dfac430a9801, type: 3}
       propertyPath: WinPanel
       value: 
-      objectReference: {fileID: 1031735971}
+      objectReference: {fileID: 0}
     - target: {fileID: 6129084511623285804, guid: c58610019ac108e479e1dfac430a9801, type: 3}
       propertyPath: Spawners.Array.size
       value: 1
