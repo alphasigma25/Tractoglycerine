@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     SpawnerManager Spawner;
     [SerializeField] GameObject WinPanel;
 
-    public bool hasWon = false;
+    public bool hasWon { get; set; } = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Spawner.enemies.Count == 0 && Spawner.nb_created == Spawner.data.maxEnemies) 
-        { 
+        if (Spawner.enemies.Count == 0 && Spawner.nb_created == Spawner.data.maxEnemies)
+        {
             //WIN
             WinPanel.SetActive(true);
             hasWon = true;
