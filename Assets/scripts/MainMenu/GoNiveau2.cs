@@ -8,7 +8,7 @@ public class GoNiveau2 : MonoBehaviour
     // Called when we click the "Play" button.
     public void OnPlayButton()
     {
-        SceneManager.LoadScene("Lvl2Victor");
+        SceneManager.LoadScene("Level 2 calvin");
     }
 
 }

@@ -8,7 +8,7 @@ public class MenuCommandes : MonoBehaviour
     // Called when we click the "Play" button.
     public void OnPlayButton()
     {
-        SceneManager.LoadScene("Lvl1Victor");
+        SceneManager.LoadScene("Level 1 calvin");
     }
 
 }

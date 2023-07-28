@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     public float maxHealth = 5;
     private float health;
     private bool load = false;
+    
+
+    [SerializeField] GameObject GameOver;
+    public bool hasDied { get; set; } = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,16 +36,20 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
         {
+            hasDied = true;
+
             if (!load)
             {
 
                 load = true;
+                
 
                 Debug.Log("Le joueur est mort");
-
-                SceneManager.LoadScene("GameOverVictor", LoadSceneMode.Additive);
+                                
                 Destroy(GetComponent<PlayerMovement>());
                 Destroy(GetComponent<PlayerController>());
+
+                GameOver.SetActive(hasDied);
 
             }
         }
