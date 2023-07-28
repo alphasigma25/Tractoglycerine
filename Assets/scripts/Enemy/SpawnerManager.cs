@@ -24,7 +24,7 @@ public class SpawnerManager : MonoBehaviour
 
     private void CreateEnemy()
     {
-        GameObject newEnemy = Instantiate(data.EnemyObject, transform.position + Random.onUnitSphere, Quaternion.identity);
+        GameObject newEnemy = Instantiate(data.EnemyObject, transform.position + Random.insideUnitSphere, Quaternion.identity);
         newEnemy.GetComponent<Enemy>().data = data.enemies[Random.Range(0, data.enemies.Count)];
         enemies.Add(newEnemy);
     }
