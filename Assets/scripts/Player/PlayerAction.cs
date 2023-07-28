@@ -8,7 +8,15 @@ public class PlayerAction : MonoBehaviour
     //Reference Scripts
     private PlayerController _playerController;
     public List<GameObject> Projectiles;
+
     private AudioSource _audioSource;
+
+    public GameObject foot;
+
+    private Animator animator;
+
+
+    private bool invocation_available = true;
 
     void Awake()
     {
@@ -38,5 +46,22 @@ public class PlayerAction : MonoBehaviour
             newProjectile.GetComponent<Projectile>().direction = dir;
             _audioSource.Play();
         }
+
+
+        if (_playerController.Action3 && invocation_available)
+        {
+            Instantiate(foot, Vector3.zero, Quaternion.identity);
+            invocation_available = false;
+        }
+    }
+
+    void PlayShootAnimation()
+    {
+        animator.SetTrigger("Shoot");
+    }
+
+    void ProjectilShootAnimation()
+    {
+        animator.SetTrigger("ProjectilShoot");
     }
 }
