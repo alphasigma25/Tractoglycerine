@@ -8,6 +8,7 @@ public class PlayerAction : MonoBehaviour
     //Reference Scripts
     private PlayerController _playerController;
     public List<GameObject> Projectiles;
+    private AudioSource _audioSource;
 
     void Awake()
     {
@@ -16,7 +17,7 @@ public class PlayerAction : MonoBehaviour
 
     void Start()
     {
-
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,6 +28,7 @@ public class PlayerAction : MonoBehaviour
             var dir = GetComponent<PlayerMovement>().Direction;
             GameObject newProjectile = Instantiate(Projectiles[0], transform.position + dir, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = dir;
+            _audioSource.Play();
         }
 
         if (_playerController.Action2 && Projectiles.Count > 1)
@@ -34,6 +36,7 @@ public class PlayerAction : MonoBehaviour
             var dir = GetComponent<PlayerMovement>().Direction;
             GameObject newProjectile = Instantiate(Projectiles[1], transform.position + dir, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = dir;
+            _audioSource.Play();
         }
     }
 }

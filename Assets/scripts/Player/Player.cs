@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
                 Debug.Log("Le joueur est mort");
 
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+                SceneManager.LoadScene("GameOverVictor", LoadSceneMode.Additive);
                 Destroy(GetComponent<PlayerMovement>());
                 Destroy(GetComponent<PlayerController>());
 

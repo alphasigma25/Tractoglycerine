@@ -3,18 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class MenuCommandes : MonoBehaviour
 {
     // Called when we click the "Play" button.
     public void OnPlayButton()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Lvl1Victor");
     }
 
-
-    // Called when we click the "Quit" button.
-    public void OnQuitButton ()
-    {
-        Application.Quit();
-    }
 }
