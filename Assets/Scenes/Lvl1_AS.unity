@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6351674835943593078, guid: 82cfebbd992836d48882332276224aea, type: 3}
+      propertyPath: foot
+      value: 
+      objectReference: {fileID: 1013622074536377930, guid: bb823d81dff0fee429e14268bc7bbbc0, type: 3}
+    - target: {fileID: -6351674835943593078, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: Projectile
       value: 
       objectReference: {fileID: 1013622074536377930, guid: a90711c025e5ec14fbc88c97534d2949, type: 3}
@@ -145,10 +149,14 @@ PrefabInstance:
     - target: {fileID: -6351674835943593078, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: Projectiles.Array.data[1]
       value: 
-      objectReference: {fileID: 1013622074536377930, guid: 5e176552dbaf35c40b0ba69e5c77816a, type: 3}
+      objectReference: {fileID: 1013622074536377930, guid: a90711c025e5ec14fbc88c97534d2949, type: 3}
     - target: {fileID: -5663998324133542822, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5663998324133542822, guid: 82cfebbd992836d48882332276224aea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4926550735402883414, guid: 82cfebbd992836d48882332276224aea, type: 3}
       propertyPath: maxHealth
@@ -256,6 +264,10 @@ PrefabInstance:
     - target: {fileID: 6530027749127449958, guid: c2f73b14b8473794b8aa7af1ebf9ee9b, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530027749127449958, guid: c2f73b14b8473794b8aa7af1ebf9ee9b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -17.76
       objectReference: {fileID: 0}
     - target: {fileID: 6530027749127449958, guid: c2f73b14b8473794b8aa7af1ebf9ee9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -846,6 +858,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
+      propertyPath: InterruptionTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
       propertyPath: InterruptionObject
       value: 
       objectReference: {fileID: 628998047}
@@ -884,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6530027749127449958, guid: c2f73b14b8473794b8aa7af1ebf9ee9b, type: 3}
       propertyPath: m_LocalScale.x
-      value: -21.467705
+      value: -17.51
       objectReference: {fileID: 0}
     - target: {fileID: 6530027749127449958, guid: c2f73b14b8473794b8aa7af1ebf9ee9b, type: 3}
       propertyPath: m_LocalScale.y
