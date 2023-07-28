@@ -3,15 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Random = UnityEngine.Random;
+
+
 public class PlayerAction : MonoBehaviour
 {
     //Reference Scripts
     private PlayerController _playerController;
     public List<GameObject> Projectiles;
+    private GameManager GM;
+    [SerializeField]
+    private GameObject foot;
 
     void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+
     }
 
     void Start()
@@ -34,6 +41,11 @@ public class PlayerAction : MonoBehaviour
             var dir = GetComponent<PlayerMovement>().Direction;
             GameObject newProjectile = Instantiate(Projectiles[1], transform.position + dir, Quaternion.identity);
             newProjectile.GetComponent<Projectile>().direction = dir;
+        }
+
+        if (_playerController.Action3 && true)
+        {
+            Instantiate(foot, Random.insideUnitCircle, Quaternion.identity);
         }
     }
 }
