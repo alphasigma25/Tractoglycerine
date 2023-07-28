@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     {
         direction = (playerTransfo.position - transform.position).normalized;
         transform.position += direction * data.speed * Time.deltaTime;
+        transform.LookAt(playerTransfo.position, Vector3.back);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
