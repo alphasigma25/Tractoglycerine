@@ -11,11 +11,12 @@ public class PlayerAction : MonoBehaviour
     //Reference Scripts
     private PlayerController _playerController;
     public List<GameObject> Projectiles;
-    private GameManager GM;
-    [SerializeField]
-    private GameObject foot;
+
+    public GameObject foot;
 
     private Animator animator;
+
+    private bool invocation_available = true;
 
     void Awake()
     {
@@ -48,9 +49,10 @@ public class PlayerAction : MonoBehaviour
             PlayShootAnimation();
         }
 
-        if (_playerController.Action3 && true)
+        if (_playerController.Action3 && invocation_available)
         {
-            Instantiate(foot, Random.insideUnitCircle, Quaternion.identity);
+            Instantiate(foot, Vector3.zero, Quaternion.identity);
+            invocation_available = false;
         }
     }
 

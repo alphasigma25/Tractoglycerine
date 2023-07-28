@@ -41,5 +41,9 @@ public class Enemy : MonoBehaviour
             }
             Destroy(collided);
         }
+        if (collided.tag == "Killer" && collided.transform.position.z > -0.5)
+        {
+            health = 0;
+        }
     }
 }
