@@ -842,9 +842,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
+      propertyPath: randomRangeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
       propertyPath: InterruptionObject
       value: 
       objectReference: {fileID: 628998047}
+    - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
+      propertyPath: chanceOfInterruption
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
+      propertyPath: deltaTimeInterruption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
       propertyPath: InterruptionImages.Array.data[0]
       value: 
