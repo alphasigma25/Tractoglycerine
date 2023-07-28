@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //Reference Scripts
     private PlayerController _playerController;
+    private Animator animator;
 
     [SerializeField] private float Speed = 4.0f;
     [SerializeField] private float RotationSpeed = 720f;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -35,5 +37,7 @@ public class PlayerMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, direction);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 2 * Mathf.PI);
         }
+
+        animator.SetFloat("Speed", direction.magnitude);
     }
 }

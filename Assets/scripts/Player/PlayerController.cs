@@ -101,10 +101,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (gameManager.hasWon && _action2)
-        {
-            SceneManager.LoadScene(1);
-        }
+      
     }
 
     public void OnMove(InputValue value)
