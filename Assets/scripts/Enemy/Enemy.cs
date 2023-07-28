@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
         playerTransfo = GameObject.FindGameObjectWithTag("Player").transform;
         health = data.initHealth;
         gameObject.GetComponent<MeshRenderer>().material.color = data.color;
-        gameObject.GetComponent<SpriteRenderer>().sprite = data.sprite;
         gameObject.GetComponent<Rigidbody2D>().mass = data.mass;
     }
 
