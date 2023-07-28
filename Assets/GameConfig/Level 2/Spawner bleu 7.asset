@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 757b06662e4ae3d42b198b684e72e7dd, type: 3}
-  m_Name: Spawner bleu 4
+  m_Name: Spawner bleu 7
   m_EditorClassIdentifier: 
   EnemyObject: {fileID: 6719033773205701123, guid: 8edfec91c4ba07540b9cf07591534b3e, type: 3}
   enemies:
   - {fileID: 11400000, guid: 9e3c552b6380a2c4ba1f29b848b4bf5b, type: 2}
-  startSpwaning: 39
-  spawnFreq: 0.6
-  maxEnemies: 12
+  startSpwaning: 46
+  spawnFreq: 5
+  maxEnemies: 3

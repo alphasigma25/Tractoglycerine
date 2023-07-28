@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    SpawnerManager Spawner;
+    public List<SpawnerManager> Spawners;
     [SerializeField] GameObject WinPanel;
 
     public bool hasWon { get; set; } = false;
@@ -12,17 +12,19 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Spawner = GameObject.Find("Spawner").GetComponent<SpawnerManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Spawner.enemies.Count == 0 && Spawner.nb_created == Spawner.data.maxEnemies)
+        hasWon = true;
+        foreach (var spawner in Spawners)
         {
-            //WIN
-            WinPanel.SetActive(true);
-            hasWon = true;
+            // opération booléenne, on calcule si tous les ennemis de tous les spawners sont éliminés
+            hasWon &= (spawner.enemies.Count == 0 && spawner.nb_created == spawner.data.maxEnemies);
         }
+        WinPanel.SetActive(hasWon);
+
     }
 }

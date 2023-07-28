@@ -18,5 +18,5 @@ MonoBehaviour:
   speed: 2.7
   initHealth: 10
   damage: 1
-  w1: 2
+  w1: 0
   w2: 10
