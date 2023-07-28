@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 Aim { get => _aim; set => _aim = value; }
     public bool Action1 { get => _action1; set => _action1 = value; }
     public bool Action2 { get => _action2; set => _action2 = value; }
-    public bool Action2 { get => _action3; set => _action3 = value; }
+    public bool Action3 { get => _action3; set => _action3 = value; }
     public bool CanRepeateActions { get => _canRepeateActions; set => _canRepeateActions = value; }
 
     private void Awake()
