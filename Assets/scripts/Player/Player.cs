@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+
     public float maxHealth = 5;
     private float health;
     private bool load = false;
+    public bool hasDied { get; set; } = false;
+
+    [SerializeField] GameObject GameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +40,15 @@ public class Player : MonoBehaviour
             {
 
                 load = true;
+                hasDied = true;
 
                 Debug.Log("Le joueur est mort");
 
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+                
                 Destroy(GetComponent<PlayerMovement>());
                 Destroy(GetComponent<PlayerController>());
 
+                GameOver.SetActive(hasDied);
             }
         }
     }
