@@ -16,5 +16,5 @@ MonoBehaviour:
   enemies:
   - {fileID: 11400000, guid: 47cb65751f6ee7043a73370d0a1544e2, type: 2}
   startSpwaning: 16
-  spawnFreq: 1.1
-  maxEnemies: 15
+  spawnFreq: 2
+  maxEnemies: 8
