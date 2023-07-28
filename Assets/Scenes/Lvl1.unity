@@ -834,6 +834,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129084511623285810, guid: c58610019ac108e479e1dfac430a9801, type: 3}
       propertyPath: InterruptionObject
       value: 
       objectReference: {fileID: 628998047}
