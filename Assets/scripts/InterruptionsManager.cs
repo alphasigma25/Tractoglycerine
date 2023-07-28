@@ -11,7 +11,7 @@ public class InterruptionsManager : MonoBehaviour
     [SerializeField]
     private float InterruptionTime = 1;
     [SerializeField]
-    private float chanceOfInterruption = 0.1f;
+    private float randomRangeTime = 3;
 
     [Header("Text")]
     [SerializeField]
@@ -46,10 +46,10 @@ public class InterruptionsManager : MonoBehaviour
             if (timer < 0)
             {
                 HidePopup();
+                time += Time.deltaTime;
             }
 
-            time += Time.deltaTime;
-            if (time > deltaTimeInterruption && Random.value > chanceOfInterruption)
+            if (time > deltaTimeInterruption + Random.value * randomRangeTime)
             {
                 ShowPopup();
                 time = 0;
