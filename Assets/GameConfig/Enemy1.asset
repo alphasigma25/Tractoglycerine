@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   color: {r: 0, g: 0.5766519, b: 0.9764706, a: 1}
   mass: 0.01
-  speed: 3.2
+  speed: 2.7
   initHealth: 5
   damage: 1
   w1: 5
