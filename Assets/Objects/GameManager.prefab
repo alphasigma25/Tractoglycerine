@@ -63,5 +63,5 @@ MonoBehaviour:
   chanceOfInterruption: 0.1
   InterruptionObject: {fileID: 0}
   InterruptionImages:
-  - {fileID: 21300000, guid: b75178239e8f0804da71d13f6d70a4c3, type: 3}
-  - {fileID: 21300000, guid: 78a241c432c968a4dac35b9a0be491c0, type: 3}
+  - {fileID: 21300000, guid: c9d45956e13e6af4c8d805f708ee2d66, type: 3}
+  - {fileID: 21300000, guid: 91d0940fcb1413547bdde253cacc355f, type: 3}
