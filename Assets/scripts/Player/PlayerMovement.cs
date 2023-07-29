@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     [SerializeField] private float Speed = 4.0f;
-    [SerializeField] private float RotationSpeed = 720f;
     public Vector3 Direction { get; set; } = Vector3.right;
     void Awake()
     {

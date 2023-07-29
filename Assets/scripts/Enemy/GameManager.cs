@@ -26,7 +26,5 @@ public class GameManager : MonoBehaviour
             hasWon &= (spawner.enemies.Count == 0 && spawner.nb_created == spawner.data.maxEnemies);
         }
         WinPanel.SetActive(hasWon);
-
-
     }
 }
