@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour
     //Reference Scripts
     private PlayerController _playerController;
     private Animator animator;
+    private AudioSource _audioSource;
 
     [SerializeField] private float Speed = 4.0f;
     public Vector3 Direction { get; set; } = Vector3.right;
+    bool isPlaying = false;
     void Awake()
     {
         _playerController = GetComponent<PlayerController>();
@@ -18,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        _audioSource = GetComponents<AudioSource>()[2];
     }
 
     void Update()
@@ -35,8 +37,23 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, direction);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 2 * Mathf.PI);
+            if(!isPlaying)
+            {
+                isPlaying = true;
+                _audioSource.Play();
+            }
+
         }
 
-        animator.SetFloat("Speed", direction.magnitude);
+        if (direction == Vector3.zero)
+        {
+            if (isPlaying)
+            {
+                isPlaying = false;
+                _audioSource.Pause();
+            }
+        }
+            animator.SetFloat("Speed", direction.magnitude);
+
     }
 }

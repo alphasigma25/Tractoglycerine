@@ -18,7 +18,7 @@ public class PlayerAction : MonoBehaviour
 
     private bool invocation_available = true;
 
-    private AudioSource _audioSource;
+    private AudioSource[] _audioSource;
 
     void Awake()
     {
@@ -29,7 +29,7 @@ public class PlayerAction : MonoBehaviour
 
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponents<AudioSource>();
     }
 
     void Update()
@@ -43,7 +43,7 @@ public class PlayerAction : MonoBehaviour
             PlayShootAnimation();
             ProjectilShootAnimation();
 
-            _audioSource.Play();
+            _audioSource[0].Play();
         }
 
         if (_playerController.Action2 && Projectiles.Count > 1)
@@ -54,13 +54,14 @@ public class PlayerAction : MonoBehaviour
             PlayShootAnimation();
             ProjectilShootAnimation();
 
-            _audioSource.Play();
+            _audioSource[0].Play();
         }
 
         if (_playerController.Action3 && invocation_available)
         {
             Instantiate(foot, Vector3.zero, Quaternion.identity);
             invocation_available = false;
+            _audioSource[1].Play();
         }
     }
 
