@@ -15,6 +15,6 @@ MonoBehaviour:
   EnemyObject: {fileID: 6719033773205701123, guid: 8edfec91c4ba07540b9cf07591534b3e, type: 3}
   enemies:
   - {fileID: 11400000, guid: 9e3c552b6380a2c4ba1f29b848b4bf5b, type: 2}
-  startSpwaning: 39
-  spawnFreq: 1.5
-  maxEnemies: 8
+  startSpwaning: 34
+  spawnFreq: 3
+  maxEnemies: 4
